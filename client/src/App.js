@@ -16,14 +16,14 @@ class App extends Component {
       <Router>
         <div>
           <Nav />
-          <Switch>
-            {<Route exact path='/' component={home} />}
-            {<Route exact path='/register' component={register} />}
-            {<Route exact path='/addchore' component={addChore} />}
-            {<Route exact path='/createPool' component={createPool} />}
-            {<Route exact path='/poolManager' component={poolManager} />}
-            {<Route exact path='/poolMember' component={poolMember} />}
-          </Switch>
+            <Switch>
+              {<Route exact path='/' component={home} />}
+              {<Route exact path='/register' component={register} />}
+              {<Route exact path='/addchore' component={addChore} />}
+              {<Route exact path='/createPool' component={createPool} />}
+              {<Route exact path='/poolManager' component={poolManager} />}
+              {<Route exact path='/poolMember' component={poolMember} />}
+            </Switch>
         </div>
       </Router>
     );

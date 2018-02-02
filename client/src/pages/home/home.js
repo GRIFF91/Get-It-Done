@@ -17,8 +17,6 @@ class home extends Component {
                         </p>
                 </div>
             </Container>
-                
-           
         );
     }
 }

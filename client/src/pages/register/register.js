@@ -7,23 +7,23 @@ class register extends Component {
         return (  
             <Container fluid>
                 <form>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">User Name</label>
-                        <input type="username" class="form-control" id="ExampleUser1" placeholder="User Name" />
+                    <div className="form-group">
+                        <label for="name">User Name</label>
+                        <input type="username" className="form-control" id="ExampleUser1" placeholder="User Name" name="name" />
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email address</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" />
+                    <div className="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" className="form-control" id="exampleInputEmail1" placeholder="Email" name="email"/>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+                    <div className="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" name="password"/>
                     </div>
-                    <div class="form-group">
-                        <label for="confirmExampleInputPassword1">Confirm Password</label>
-                        <input type="password" class="form-control" id="confirmExampleInputPassword1" placeholder="Confirm Password" />
+                    <div className="form-group">
+                        <label for="password-confirm">Confirm Password</label>
+                        <input type="password" className="form-control" id="confirmExampleInputPassword1" placeholder="Confirm Password" name="password-confirm"/>
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
+                    <button type="submit" className="btn btn-default">Submit</button>
                 </form>
             </Container>
         );

@@ -4,7 +4,8 @@ import { Col, Row, Container } from "../../components/grid";
 
 class poolMember extends Component {
     render() {
-        return (  
+        return (
+        <div>  
             <Container fluid>
                 <br />
                     <Row>
@@ -30,6 +31,7 @@ class poolMember extends Component {
                         </Col>
                     </Row>
             </Container>
+        </div>
         );
     }
 }

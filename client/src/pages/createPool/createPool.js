@@ -14,6 +14,7 @@ class createPool extends Component {
                     <div className="form-group">
                         <label for="Describe the Pool">Pool Description</label>
                         <textarea className="form-control" rows="3" placeholder="Describe the Pool here" name="description"></textarea>
+                    </div>
                     <div classNamne="form-group">
                         <label for="reward">Reward</label>
                         <input type="text" className="form-control" id="addReward" placeholder="Add a reward here" name="reward" />

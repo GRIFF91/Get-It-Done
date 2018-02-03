@@ -11,9 +11,9 @@ const poolSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
-  tasks: [{
-    type: String
-    trim: true
+  chores: [{
+    type: Schema.Types.ObjectId,
+    ref:'Chore'
   }],
   reward: {
     type: String,

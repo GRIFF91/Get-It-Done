@@ -7,13 +7,13 @@ class addChore extends Component {
         return (  
             <Container fluid>
                 <form>
-                    <div class="form-group">
-                        <label for="AddAChoreHere">Add A Chore</label>
-                        <input type="addChore" class="form-control" id="AddAChore" placeholder="Add a chore by name here" name="name" />
+                    <div className="form-group">
+                        <label for="name">Add A Chore</label>
+                        <input type="addChore" className="form-control" id="AddAChore" placeholder="Add a chore by name here" name="name" />
                     </div>
-                        <label for="Describe the Chore">Chore Description</label>
-                        <textarea class="form-control" rows="3" placeholder="Describe the chore here" name="description"></textarea>
-                        <button type="submit" class="btn btn-default">Submit</button>
+                        <label for="description">Chore Description</label>
+                        <textarea className="form-control" rows="3" placeholder="Describe the chore here" name="description"></textarea>
+                        <button type="submit" className="btn btn-default">Submit</button>
                 </form>
             </Container>
         );

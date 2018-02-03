@@ -21,7 +21,7 @@ const Nav = () =>
           <a className="nav-link" href="/addChore">Add a Chore</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/addPool">Add a Pool</a>
+          <a className="nav-link" href="/createPool">Add a Pool</a>
         </li>
       </ul>
       <form className="form-inline my-2 my-lg-0">

@@ -5,14 +5,14 @@ import { Col, Row, Container } from "../../components/grid";
 class createPool extends Component {
     render() {
         return (
-            <div>
+            <Container fluid>
                 <form>
                     <div className="form-group">
-                        <label for="AddAPoolHere">Add A Pool</label>
+                        <label for="name">Add A Pool</label>
                         <input type="text" className="form-control" id="addAPool" placeholder="Add a Pool by name here" name="name" />
                     </div>
                     <div className="form-group">
-                        <label for="Describe the Pool">Pool Description</label>
+                        <label for="description">Pool Description</label>
                         <textarea className="form-control" rows="3" placeholder="Describe the Pool here" name="description"></textarea>
                     </div>
                     <div classNamne="form-group">
@@ -20,8 +20,8 @@ class createPool extends Component {
                         <input type="text" className="form-control" id="addReward" placeholder="Add a reward here" name="reward" />
                     </div>
                         <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-            </div>
+                    </form>
+                </Container>
         );
     }
 }

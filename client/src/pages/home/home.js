@@ -7,6 +7,7 @@ class home extends Component {
     render() {
         return (  
             <Container fluid>
+            <br />
                 <div className="jumbotron">
                     <h1 className="display-3">Chore Pool</h1>
                         <p className="lead">The Fun Way to Complete Family Tasks</p>

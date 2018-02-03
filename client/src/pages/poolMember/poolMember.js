@@ -6,7 +6,7 @@ class poolMember extends Component {
     render() {
         return (  
             <div>
-                <h1>Pool Member Page</h1>
+                <h1>poolMember page</h1>
             </div>
         );
     }

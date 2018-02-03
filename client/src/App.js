@@ -6,6 +6,7 @@ import addChore from "./pages/addchore";
 import createPool from "./pages/createPool";
 import poolManager from "./pages/poolManager";
 import poolMember from "./pages/poolMember";
+import signIn from "./pages/signIn";
 import Nav from "./components/nav";
 import './App.css';
 
@@ -23,6 +24,7 @@ class App extends Component {
               {<Route exact path='/createPool' component={createPool} />}
               {<Route exact path='/poolManager' component={poolManager} />}
               {<Route exact path='/poolMember' component={poolMember} />}
+              {<Route exact path='/signIn' component={signIn} />}
             </Switch>
         </div>
       </Router>

@@ -14,8 +14,8 @@ class createPool extends Component {
                         <label for="Describe the Pool">Pool Description</label>
                         <textarea className="form-control" rows="3" placeholder="Describe the Pool here"></textarea>
                         <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
-                </Container>
+                </form>
+            </Container>
         );
     }
 }

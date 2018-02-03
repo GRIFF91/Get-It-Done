@@ -18,6 +18,17 @@ class poolMember extends Component {
                             </div>
                         </Col>
 
+
+
+
+
+
+
+
+
+
+
+                        
                         <Col size="md-4">
                             <div className="card text-white bg-primary mb-3">
                                 <div className="card-header">Fill  the Pool</div>

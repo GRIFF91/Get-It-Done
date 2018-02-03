@@ -8,6 +8,7 @@ import poolManager from "./pages/poolManager";
 import poolMember from "./pages/poolMember";
 import signIn from "./pages/signIn";
 import Nav from "./components/nav";
+import Footer from "./components/footer";
 import './App.css';
 
 
@@ -26,6 +27,7 @@ class App extends Component {
               {<Route exact path='/poolMember' component={poolMember} />}
               {<Route exact path='/signIn' component={signIn} />}
             </Switch>
+          <Footer />
         </div>
       </Router>
     );

@@ -20,8 +20,8 @@ class createPool extends Component {
                         <input type="text" className="form-control" id="addReward" placeholder="Add a reward here" name="reward" />
                     </div>
                         <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
-                </Container>
+                </form>
+            </Container>
         );
     }
 }

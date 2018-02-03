@@ -24,7 +24,7 @@ class poolMember extends Component {
                                 <div className="card-body">
                                     <h4 className="card-title">Reward:</h4>
                                     <h5>Go to the Movies</h5>
-                                    <p className="card-text">75/100</p>
+                                    <p className="card-text">75/100%</p>
                                 </div>
                             </div>
                         </Col>

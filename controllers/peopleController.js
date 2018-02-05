@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+// const promisify = require('es6-promisify');
+const util = require('util');
 const PoolManager = mongoose.model('PoolManager');
 const PoolMember = mongoose.model('PoolMember');
 
@@ -26,11 +28,26 @@ exports.validateRegister = (req, res, next) => {
   next();
 };
 
-exports.registerPoolManager = (req, res) => {
-  console.log(`New Pool Manager: ${req.name}`);
-  PoolManager.create(req.body)
-    .then(PM => res.json(PM))
-    .catch(err => res.status(422).json(err));
+exports.registerPoolManager = async (req, res) => {
+  console.log(`New Pool Manager: ${req.body.name}`);
+
+  const PM = new PoolManager(req.body);
+
+  // User.register method comes from the passportLocalMongoose package
+  // const registerWithPromise = utils.promisify(PoolManager.register);
+  // registerWithPromise(PM, req.body.password)
+
+  PoolManager.register(PM, req.body.password, (err) => {
+    if (err) throw err;
+
+    console.log(`${req.body.name} is now registered! 😃`);
+
+    res.redirect('/');
+
+  });
+
+  // PoolManager.register()
+  // res.redirect('/');
 };
 
 

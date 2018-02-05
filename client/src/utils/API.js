@@ -1,6 +1,19 @@
 import axios from "axios";
 
 export default {
+
+  registerPoolManager: function(name, email, password, passwordConfirm) {
+    const newPM = {
+      name,
+      email,
+      password,
+      "password-confirm": passwordConfirm
+    };
+
+    return axios.post('/api/people/pool-managers', newPM);
+  },
+
+
   // Gets all books
   getBooks: function() {
     return axios.get("/api/books");

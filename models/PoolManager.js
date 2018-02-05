@@ -20,12 +20,12 @@ const poolManagerSchema = new mongoose.Schema({
     required: 'Please supply an email address'
   },
   team: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'Team'
   }
 });
 
-userSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
-userSchema.plugin(mongodbErrorHandler);
+poolManagerSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
+poolManagerSchema.plugin(mongodbErrorHandler);
 
 module.exports = mongoose.model('PoolManager', poolManagerSchema);

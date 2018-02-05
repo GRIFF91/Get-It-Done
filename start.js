@@ -11,7 +11,11 @@ mongoose.connection.on('error', (err) => {
 });
 
 // Import all models (When we have them!)
-// require('./models/article');
+require('./models/PoolManager');
+require('./models/PoolMember');
+require('./models/Chore');
+require('./models/Pool');
+require('./models/Team');
 
 
 // Start our API server

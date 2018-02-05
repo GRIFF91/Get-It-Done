@@ -1,3 +1,7 @@
+# Client Build File to be uploaded upon deployment
+/client/build
+
+
 # Logs
 logs
 *.log

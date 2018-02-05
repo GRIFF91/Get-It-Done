@@ -19,7 +19,8 @@ class createPool extends Component {
                         <label for="reward">Reward</label>
                         <input type="text" className="form-control" id="addReward" placeholder="Add a reward here" name="reward" />
                     </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
+                    <br />
+                        <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </Container>
         );

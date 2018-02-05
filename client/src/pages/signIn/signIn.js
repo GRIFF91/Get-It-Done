@@ -25,7 +25,7 @@ class signIn extends Component {
                         <label for="exampleInputEmail1">Email</label>
                         <input type="email" className="form-control" id="exampleInputEmail1" placeholder="Email" />
                     </div>
-                    <button type="submit" className="btn btn-default">Submit</button>
+                    <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
             </Container>
         );

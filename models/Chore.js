@@ -12,4 +12,4 @@ const choreSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongose.model('Chore', choreSchema);
+module.exports = mongoose.model('Chore', choreSchema);

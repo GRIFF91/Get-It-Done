@@ -12,7 +12,7 @@ const poolSchema = new mongoose.Schema({
     trim: true
   },
   chores: [{
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref:'Chore'
   }],
   reward: {

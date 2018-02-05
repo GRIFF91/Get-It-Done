@@ -8,11 +8,11 @@ const teamSchema = new mongoose.Schema({
     required: 'Please supply a Team name'
   },
   poolManagers: [{
-    type: Schema.Types.ObectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'PoolManager'
   }],
   poolMember: [{
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: 'PoolMembers'
   }]
 });

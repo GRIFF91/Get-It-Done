@@ -1,15 +1,24 @@
-const router = require("express").Router();
-// const articleController = require("../../controllers/articleController");
+const router = require('express').Router();
+const peopleRoutes = require('./peopleRoutes');
+const poolRoutes = require('./poolRoutes');
+const choreRoutes = require('./choreRoutes');
 
+// People routes
+router.use('/people', peopleRoutes);
 
-//router.route("/")
-//   .get(articleController.findAll)
-//   .post(articleController.create);
+// Pool routes
+router.use('/pool', poolRoutes);
 
-// // Matches with "/api/books/:id"
-// router
-//   .route("/:id")
-//   .get(articleController.findById)
-//   .delete(articleController.remove);
+// Chore routes
+router.use('/chore', choreRoutes);
+
+  // .get(articleController.findAll)
+  // .post(articleController.create);
+
+// Matches with "/api/books/:id"
+router
+  .route("/:id")
+  // .get(articleController.findById)
+  // .delete(articleController.remove);
 
 module.exports = router;

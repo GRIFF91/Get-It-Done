@@ -14,8 +14,8 @@ class register extends Component {
 
   registerPoolManager = (name, email, password, passwordConfirm) => {
     API.registerPoolManager(name, email, password, passwordConfirm)
-    // .then(res => console.log('Registration sent'))
-    // .catch(err => console.log(err));
+    .then(res => console.log('Registration sent'))
+    .catch(err => console.log(err));
   }
 
 
@@ -41,8 +41,6 @@ class register extends Component {
       passwordConfirm: ''
     });
   }
-
-
 
     render() {
         return (  

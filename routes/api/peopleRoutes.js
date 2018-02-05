@@ -8,7 +8,7 @@ router.route("/pool-managers")
   // .get(catchErrors(articleController.findAll))
   .post(
     peopleController.validateRegister,
-    peopleController.registerPoolManager);
+    catchErrors(peopleController.registerPoolManager));
 
 
   module.exports = router;

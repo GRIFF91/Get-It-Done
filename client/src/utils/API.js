@@ -13,6 +13,15 @@ export default {
     return axios.post('/api/people/pool-managers', newPM);
   },
 
+  login: function(email, password) {
+    const user = { email, password };
+    return axios.post('/api/people/login', user);
+  },
+
+  userData: function() {
+    return axios.get('/api/people/userData');
+  },
+
 
   // Gets all books
   getBooks: function() {

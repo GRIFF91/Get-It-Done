@@ -22,6 +22,15 @@ export default {
     return axios.get('/api/people/userData');
   },
 
+  logout: function() {
+    return axios.get('/api/people/logout');
+  },
+
+  createPool: function(name, description, reward) {
+    const pool = { name, description, reward };
+    return axios.post('/api/pool/create', pool);
+  },
+
 
   // Gets all books
   getBooks: function() {

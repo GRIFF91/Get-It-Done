@@ -4,7 +4,7 @@ import { Col, Row, Container } from "../../components/grid";
 import API from '../../utils/API';
 
 class register extends Component {
-  
+
   state = {
     name: '',
     email: '',
@@ -15,6 +15,7 @@ class register extends Component {
   registerPoolManager = (name, email, password, passwordConfirm) => {
     API.registerPoolManager(name, email, password, passwordConfirm)
     .then(res => console.log('Registration sent'))
+    .then(() => this.props.history.push('/'))
     .catch(err => console.log(err));
   }
 
@@ -53,6 +54,7 @@ class register extends Component {
                           type="username"
                           className="form-control"
                           id="ExampleUser1"
+                          value={this.state.name}
                           onChange={this.handleInputChange}
                         />
                     </div>
@@ -64,6 +66,7 @@ class register extends Component {
                           className="form-control"
                           id="exampleInputEmail1"
                           placeholder="example@email.com"
+                          value={this.state.email}
                           onChange={this.handleInputChange}
                         />
                     </div>
@@ -74,6 +77,7 @@ class register extends Component {
                           type="password"
                           className="form-control"
                           id="exampleInputPassword1"
+                          value={this.state.password}
                           onChange={this.handleInputChange}
                         />
                     </div>
@@ -84,6 +88,7 @@ class register extends Component {
                           type="password"
                           className="form-control"
                           id="confirmExampleInputPassword1"
+                          value={this.state.passwordConfirm}
                           onChange={this.handleInputChange}
                         />
                     </div>

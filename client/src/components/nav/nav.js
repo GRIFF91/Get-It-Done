@@ -2,7 +2,7 @@ import React from "react";
 import "./nav.css";
 // import { Link } from 'react-router-dom';
 
-const Nav = () =>
+const Nav = (props) =>
   <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
     <a className="navbar-brand" href="/">ChorePool</a>
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +21,7 @@ const Nav = () =>
           <a className="nav-link" href="/signIn">Sign In</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/">Sign Out</a>
+          <a className="nav-link logout" onClick={props.callback}>Sign Out</a>
         </li>
       </ul>
       <form className="form-inline my-2 my-lg-0">

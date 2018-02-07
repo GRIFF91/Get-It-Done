@@ -9,15 +9,26 @@ import poolMember from "./pages/poolMember";
 import signIn from "./pages/signIn";
 import Nav from "./components/nav";
 import Footer from "./components/footer";
+import API from "./utils/API";
 import './App.css';
 
 
 class App extends Component {
+
+  logout = () => {
+    API.logout()
+    .then(res => {
+      console.log(res.data);
+      this.props.history.push("/signIn");
+    })
+    .catch(err => console.log(err));
+  }
+
   render() {
     return (
       <Router>
         <div>
-          <Nav />
+          <Nav callback={this.logout} />
             <Switch>
               {<Route exact path='/' component={home} />}
               {<Route exact path='/register' component={register} />}

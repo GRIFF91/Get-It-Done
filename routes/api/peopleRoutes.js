@@ -14,6 +14,9 @@ router.route('/pool-managers')
 router.route('/login')
   .post(authController.loginUser);
 
+router.route('/logout')
+  .get(authController.logout);
+
 router.route('/userData')
   .get(peopleController.userData);
 

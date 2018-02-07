@@ -31,6 +31,11 @@ export default {
     return axios.post('/api/pool/create', pool);
   },
 
+  addChore: function(name, description) {
+    const chore = { name, description };
+    return axios.post('/api/chore/create', chore);
+  },
+
 
   // Gets all books
   getBooks: function() {

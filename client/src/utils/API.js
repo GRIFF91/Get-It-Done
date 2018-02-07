@@ -36,6 +36,10 @@ export default {
     return axios.post('/api/chore/create', chore);
   },
 
+  getChores: function() {
+    return axios.get('/api/chore/getAll');
+  },
+
 
   // Gets all books
   getBooks: function() {

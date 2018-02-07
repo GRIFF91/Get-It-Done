@@ -8,7 +8,14 @@ class createPool extends Component {
   state = {
     name: '',
     description: '',
+    chores: [],
     reward: ''
+  }
+
+  componentDidMount() {
+    API.getChores()
+    .then(chores => this.setState({ chores: chores.data }))
+    .catch(err => console.log(err));
   }
 
   createPool = () => {
@@ -61,6 +68,18 @@ class createPool extends Component {
                           value={this.state.description}
                           onChange={this.handleInputChange}
                         > </textarea>
+                    </div>
+                    <div className="form-gropu">
+                      <label htmlFor="chores">Add Chores</label>
+                      <br />
+                      <select name="chores">
+                        <option value="Choose" disabled >Choose Existing Chores: &nbsp;</option>
+                        {this.state.chores.map(chore => 
+                          <option value={chore.name}>{chore.name}</option>
+                        )}
+                      </select>
+                      <br />
+                      <br />
                     </div>
                     <div className="form-group">
                         <label htmlFor="reward">Reward</label>

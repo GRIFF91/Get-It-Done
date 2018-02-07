@@ -4,13 +4,11 @@ const mongoose = require('mongoose');
 const PoolManager = mongoose.model('PoolManager');
 const PoolMember = mongoose.model('PoolMember');
 const promisify = require('es6-promisify');
-const mail = require('../handlers/mail');
+// const mail = require('../handlers/mail');
 
 exports.loginUser = passport.authenticate('local', {
-  failureRedirect: '/user-login',
-  failureFlash: 'Failed Login!',
-  successRedirect: '/admin-main',
-  successFlash: 'You are now logged in! 👏 👏 👏'
+  failureRedirect: '/failure',
+  successRedirect: '/success'
 });
 
 exports.logout = (req, res) => {

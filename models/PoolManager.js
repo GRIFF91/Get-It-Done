@@ -22,6 +22,10 @@ const poolManagerSchema = new mongoose.Schema({
   team: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Team'
+  },
+  role: {
+    type: String,
+    default: 'admin'
   }
 });
 

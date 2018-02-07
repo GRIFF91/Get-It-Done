@@ -47,46 +47,43 @@ class register extends Component {
             <Container fluid>
                 <form>
                     <div className="form-group">
-                        <label for="name">User Name</label>
+                        <label htmlFor="name">Your Name</label>
                         <input
                           name="name"
                           type="username"
                           className="form-control"
                           id="ExampleUser1"
-                          placeholder="User Name"
                           onChange={this.handleInputChange}
                         />
                     </div>
                     <div className="form-group">
-                        <label for="email">Email address</label>
+                        <label htmlFor="email">Email address</label>
                         <input 
                           name="email"
                           type="email"
                           className="form-control"
                           id="exampleInputEmail1"
-                          placeholder="Email"
+                          placeholder="example@email.com"
                           onChange={this.handleInputChange}
                         />
                     </div>
                     <div className="form-group">
-                        <label for="password">Password</label>
+                        <label htmlFor="password">Password</label>
                         <input
                           name="password"
                           type="password"
                           className="form-control"
                           id="exampleInputPassword1"
-                          placeholder="Password"
                           onChange={this.handleInputChange}
                         />
                     </div>
                     <div className="form-group">
-                        <label for="passwordConfirm">Confirm Password</label>
+                        <label htmlFor="passwordConfirm">Confirm Password</label>
                         <input
                           name="passwordConfirm"
                           type="password"
                           className="form-control"
                           id="confirmExampleInputPassword1"
-                          placeholder="Confirm Password"
                           onChange={this.handleInputChange}
                         />
                     </div>

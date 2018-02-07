@@ -13,7 +13,8 @@ class addChore extends Component {
                     </div>
                         <label for="description">Chore Description</label>
                         <textarea className="form-control" rows="3" placeholder="Describe the chore here" name="description"></textarea>
-                        <button type="submit" className="btn btn-default">Submit</button>
+                        <br />
+                        <button type="submit" className="btn btn-primary">Submit</button>
                 </form>
             </Container>
         );

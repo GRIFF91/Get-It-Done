@@ -87,7 +87,7 @@ class register extends Component {
                           onChange={this.handleInputChange}
                         />
                     </div>
-                    <button type="submit" className="btn btn-default" onClick={this.handleFormSubmit}>Submit</button>
+                    <button type="submit" className="btn btn-primary" onClick={this.handleFormSubmit}>Submit</button>
                 </form>
             </Container>
         );

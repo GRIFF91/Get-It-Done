@@ -110,12 +110,14 @@ class signIn extends Component {
                           value={this.state.resetEmail}
                           onChange={this.handleInputChange}/>
                     </div>
+
                     <button
                       type="submit"
                       className="btn btn-default"
                       onClick={this.handleResetSubmit}
                       > Reset →
                       </button>
+
                 </form>
             </Container>
         );

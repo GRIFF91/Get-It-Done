@@ -1,0 +1,16 @@
+.display-3 {
+    font-family: 'Slackey', cursive;
+    color: #033C73;
+}
+
+.lead {
+    color: #033C73;
+}
+
+p {
+    color: #033C73;
+}
+
+.jumbotron {
+    background-image: url("http://coralpoolsupplies.com/wp-content/uploads/2016/10/cropped-pool_5bb408e4-2.jpg");
+}

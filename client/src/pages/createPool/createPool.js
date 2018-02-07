@@ -60,8 +60,7 @@ class createPool extends Component {
                           rows="3"
                           value={this.state.description}
                           onChange={this.handleInputChange}
-                        >
-                        </textarea>
+                        > </textarea>
                     </div>
                     <div className="form-group">
                         <label htmlFor="reward">Reward</label>

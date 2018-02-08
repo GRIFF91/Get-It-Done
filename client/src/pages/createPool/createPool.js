@@ -8,13 +8,14 @@ class createPool extends Component {
   state = {
     name: '',
     description: '',
+    choreOptions: [],
     chores: [],
     reward: ''
   }
 
   componentDidMount() {
     API.getChores()
-    .then(chores => this.setState({ chores: chores.data }))
+    .then(options => this.setState({ choreOptions: options.data }))
     .catch(err => console.log(err));
   }
 
@@ -41,7 +42,8 @@ class createPool extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.createPool();
+    // this.createPool();
+    console.log(this.state);
   }
 
     render() {
@@ -49,7 +51,7 @@ class createPool extends Component {
             <Container fluid>
                 <form>
                     <div className="form-group">
-                        <label htmlFor="name">Add A Pool</label>
+                        <label htmlFor="name">Add A Pool:</label>
                         <input
                           name="name"
                           type="text"
@@ -60,7 +62,7 @@ class createPool extends Component {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="description">Pool Description</label>
+                        <label htmlFor="description">Pool Description:</label>
                         <textarea
                           name="description"
                           className="form-control"
@@ -70,11 +72,15 @@ class createPool extends Component {
                         > </textarea>
                     </div>
                     <div className="form-gropu">
-                      <label htmlFor="chores">Add Chores</label>
+                      <label htmlFor="chores"><u>Add Chores:</u></label>
                       <br />
-                      <select name="chores">
+                      <p className="sub-label">
+                        Note: <em>Hold down cntrl or command to choose multiple options</em>
+                      </p>
+                      <br />
+                      <select multiple name="chores" onChange={this.handleInputchange}>
                         <option value="Choose" disabled >Choose Existing Chores: &nbsp;</option>
-                        {this.state.chores.map(chore => 
+                        {this.state.choreOptions.map(chore => 
                           <option value={chore.name}>{chore.name}</option>
                         )}
                       </select>
@@ -82,7 +88,7 @@ class createPool extends Component {
                       <br />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="reward">Reward</label>
+                        <label htmlFor="reward">Reward:</label>
                         <input
                           name="reward"
                           type="text"

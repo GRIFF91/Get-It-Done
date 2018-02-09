@@ -26,8 +26,8 @@ export default {
     return axios.get('/api/people/logout');
   },
 
-  createPool: function(name, description, reward) {
-    const pool = { name, description, reward };
+  createPool: function(name, description, chores, reward) {
+    const pool = { name, description, chores, reward };
     return axios.post('/api/pool/create', pool);
   },
 

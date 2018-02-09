@@ -40,7 +40,7 @@ class App extends Component {
               {<Route exact path='/signIn' component={signIn} />}
               {<Route exact path='/poolTemplate' component={poolTemplate} />}
             </Switch>
-          <Footer />
+            <Footer />
         </div>
       </Router>
     );

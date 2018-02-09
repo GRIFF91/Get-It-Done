@@ -20,17 +20,11 @@ class signIn extends Component {
       const url = res.request.responseURL;
       if (url.endsWith('/success')) {
         console.log('You are now logged in! 🤠');
-        this.props.history.push('/')
+        this.props.history.push('/poolManager')
       } else {
         console.log('Either Email or Password is incorrect');
       }
     })
-    .catch(err => console.log(err));
-  }
-
-  userData = () => {
-    API.userData()
-    .then(res => console.log(res.data))
     .catch(err => console.log(err));
   }
 
@@ -49,13 +43,11 @@ class signIn extends Component {
   handleFormSubmit = event => { 
     event.preventDefault();
     this.login(this.state.email, this.state.password);
-    this.userData();
     this.setState({ email: '', password: '' });
   }
 
   handleResetSubmit = event => {
     event.preventDefault();
-    console.log(this.state);
     this.setState({ resetEmail: '' });
   }
 

@@ -28,16 +28,15 @@ exports.validateRegister = (req, res, next) => {
   next();
 };
 
+
 exports.registerPoolManager = async (req, res) => {
-  console.log(`New Pool Manager: ${req.body.name}`);
   const PM = new PoolManager(req.body);
 
   // PoolManager.register method comes from the passportLocalMongoose package
-  PoolManager.register(PM, req.body.password, (err) => {
+  await PoolManager.register(PM, req.body.password, (err) => {
     if (err) throw err;
     console.log(`${req.body.name} is now registered! 😃`);
-    res.redirect('/');
-
+    res.json(PM);
   });
 };
 

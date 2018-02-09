@@ -15,8 +15,36 @@ class register extends Component {
 
   registerPoolManager = (name, email, password, passwordConfirm) => {
     API.registerPoolManager(name, email, password, passwordConfirm)
-    .then(res => console.log('Registration sent'))
-    .then(() => this.props.history.push('/'))
+    .then(res => this.login(res.data.email, this.state.password))
+    // .then(() => {
+    //   API.login(this.state.email, this.state.password)
+    //   .then(res => {
+    //     const url = res.request.responseURL;
+    //     if (url.endsWith('/success')) {
+    //       console.log('You are now logged in! 🤠');
+    //       this.props.history.push('/poolManager')
+    //     } else {
+    //       console.log('Either Email or Password is incorrect');
+    //     }
+    //   })
+    //   .catch(err => console.log(err));
+    // })
+    .then(() => console.log('Registration sent'))
+    // .then(() => this.props.history.push('/poolManager'))
+    .catch(err => console.log(err));
+  }
+
+  login = (email, password) => {
+    API.login(email, password)
+    .then(res => {
+      const url = res.request.responseURL;
+      if (url.endsWith('/success')) {
+        console.log('You are now logged in! 🤠');
+        this.props.history.push('/poolManager')
+      } else {
+        console.log('Either Email or Password is incorrect');
+      }
+    })
     .catch(err => console.log(err));
   }
 
@@ -36,12 +64,13 @@ class register extends Component {
   handleFormSubmit = event => { 
     event.preventDefault();
     this.registerPoolManager(this.state.name, this.state.email, this.state.password, this.state.passwordConfirm);
-    this.setState({
-      name: '',
-      email: '',
-      password: '',
-      passwordConfirm: ''
-    });
+    // this.login(this.state.email, this.state.password);
+    // this.setState({
+    //   name: '',
+    //   email: '',
+    //   password: '',
+    //   passwordConfirm: ''
+    // });
   }
 
     render() {

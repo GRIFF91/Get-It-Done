@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 // import { Redirect } from "react-router-dom";
 import { Col, Row, Container } from "../../components/grid";
 import API from "../../utils/API";
+import './SingIn.css';
 
 class signIn extends Component {
 

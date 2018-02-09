@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/grid";
+import poolTemplate from '../poolTemplate/poolTemplate';
 import API from '../../utils/API';
 import "./poolManager.css";
 
@@ -16,7 +17,7 @@ class poolManager extends Component {
     pools: []
   }
 
-  componentWillMount() {
+  componentDidMount() {
     API.userData()
     .then(res => {
       this.setState({ user: res.data });
@@ -30,6 +31,13 @@ class poolManager extends Component {
       console.log(this.state.pools);
     })
     .catch(err => console.log(err));
+  }
+
+  deletePool = (event) => {
+    API.deletePool(event.target.id)
+    .then(res => this.setState({ pools: res.data }))
+    .then(() => console.log('Pool deleted!'))
+    .catch(err => console.log)
   }
 
   render() {
@@ -53,19 +61,30 @@ class poolManager extends Component {
                   {this.state.pools.map(pool => (
                     <div key={pool._id}>
                       <Container>
-                        <Col size="md-8">
-                          <h4 className="card-title float-left">{pool.name}</h4>
-                        </Col>
-                        <Col size="md-4">
-                          <Link
-                            type="button"
-                            className="btn btn-default btn-outline btn-primary float-right"
-                            to={`/pool/${pool._id}`}
-                          > Choose
-                          </Link>
-                          <br />
-                          <br />
-                        </Col>
+                        <Row>
+                          <Col size="sm-6">
+                            <h4 className="card-title float-left">{pool.name}</h4>
+                          </Col>
+                          <Col size="sm-2">
+                            <Link
+                              type="button"
+                              className="btn btn-default btn-outline btn-primary float-right"
+                              to={`/pool/${pool._id}`}
+                            > Choose
+                            </Link>
+                          </Col>
+                          <Col size="sm-2">
+                            <button
+                              type="button"
+                              className="btn btn-danger"
+                              id={pool._id}
+                              onClick={this.deletePool} > X
+                            {/* <i className="far fa-times-circle text-danger fa-2x"></i> */}
+                            </button>
+                            <br />
+                            <br />
+                          </Col>
+                        </Row>
                       </Container>
                     </div>
                   ))}

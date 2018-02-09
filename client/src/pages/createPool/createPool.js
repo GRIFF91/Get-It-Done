@@ -85,7 +85,7 @@ class createPool extends Component {
                       <select  name="chores" onChange={this.handleInputchange}>
                         <option value="Choose" disabled >Choose Existing Chores: &nbsp;</option>
                         {this.state.choreOptions.map(chore => 
-                          <option value={chore.name}>{chore.name}</option>
+                          <option key={chore._id} value={chore.name}>{chore.name}</option>
                         )}
                       </select>
                       <br />

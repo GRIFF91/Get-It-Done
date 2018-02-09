@@ -14,12 +14,14 @@ class signIn extends Component {
     resetEmail: ''
   }
 
+
   login = (email, password) => {
     API.login(email, password)
     .then(res => {
       const url = res.request.responseURL;
       if (url.endsWith('/success')) {
         console.log('You are now logged in! 🤠');
+        this.forceUpdate();
         this.props.history.push('/poolManager')
       } else {
         console.log('Either Email or Password is incorrect');

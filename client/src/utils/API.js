@@ -35,6 +35,14 @@ export default {
     return axios.get('/api/pool/getPools');
   },
 
+  getPool: function(id) {
+    return axios.get('/api/pool/getPool/' + id);
+  },
+
+  deletePool: function(id) {
+    return axios.delete('/api/pool/deletePool/' + id);
+  },
+
   addChore: function(name, description) {
     const chore = { name, description };
     return axios.post('/api/chore/create', chore);

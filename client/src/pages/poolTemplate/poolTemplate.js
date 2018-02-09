@@ -10,13 +10,14 @@ class poolTemplate extends Component {
     pool: {}
   }
 
-  componentDidMount() {
+  componentWillMount() {
     API.getPool(this.props.match.params.id)
     .then(res => this.setState({ pool: res.data }))
     .catch(err => console.log(err));
   }
 
     render() {
+      console.log(this.state);
         return (
             <div>
             <Container fluid>
@@ -28,6 +29,17 @@ class poolTemplate extends Component {
                             <div className="card-body">
                                 <h4 className="card-title">{this.state.pool.name}</h4>
                                 <p className="card-text">{this.state.pool.description}</p>
+                                {this.state.pool.chores && 
+                                  this.state.pool.chores.map(chore => (
+                                    <div>
+                                      <input
+                                        type="checkbox"
+                                        className="form-check form-check-inline"
+                                      />
+                                      <label className="form-check-label">{chore}</label>
+                                    </div>
+                                  ))
+                                }
                             </div>
                         </div>
                     </Col>

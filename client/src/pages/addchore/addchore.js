@@ -45,6 +45,7 @@ class addChore extends Component {
                           onChange={this.handleInputChange}
                         />
                     </div>
+
                         <label htmlFor="description">Chore Description</label>
                         <textarea
                           name="description"
@@ -58,6 +59,7 @@ class addChore extends Component {
                           className="btn btn-default"
                           onClick={this.handleSubmit}
                         > Submit </button>
+
                 </form>
             </Container>
         );

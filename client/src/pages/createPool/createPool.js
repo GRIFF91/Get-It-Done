@@ -102,11 +102,13 @@ class createPool extends Component {
                           onChange={this.handleInputChange}
                         />
                     </div>
+
                         <button
                           type="submit"
                           className="btn btn-default"
                           onClick={this.handleSubmit}
                         > Submit </button>
+
                 </form>
             </Container>
         );

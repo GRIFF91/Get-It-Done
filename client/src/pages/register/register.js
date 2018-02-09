@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/grid";
 import API from '../../utils/API';
+import "./register.css";
 
 class register extends Component {
 
@@ -75,6 +76,8 @@ class register extends Component {
     render() {
         return (  
             <Container fluid>
+            <br />
+            <div className="card text-white bg-primary mb-3">
                 <form>
                     <div className="form-group">
                         <label htmlFor="name">Your Name</label>
@@ -121,8 +124,9 @@ class register extends Component {
                           onChange={this.handleInputChange}
                         />
                     </div>
-                    <button type="submit" className="btn btn-default" onClick={this.handleFormSubmit}>Submit</button>
+                    <button type="submit" className="btn btn-primary" onClick={this.handleFormSubmit}>Submit</button>
                 </form>
+                </div>
             </Container>
         );
     }

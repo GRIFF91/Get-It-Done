@@ -74,6 +74,7 @@ class createPool extends Component {
     console.log(this.state);
   }
 
+<<<<<<< HEAD
   render() {
     const { chores } = this.state;
     // const value = selectedOption && selectedOption.value;
@@ -150,6 +151,73 @@ class createPool extends Component {
       </Container>
     );
   }
+=======
+    render() {
+        return (
+            <Container fluid>
+              <div className="card text-white bg-primary mb-3">
+                <form>
+                    <div className="form-group">
+                        <label htmlFor="name">Add A Pool:</label>
+                        <input
+                          name="name"
+                          type="text"
+                          className="form-control"
+                          id="addAPool"
+                          value={this.state.name}
+                          onChange={this.handleInputChange}
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="description">Pool Description:</label>
+                        <textarea
+                          name="description"
+                          className="form-control"
+                          rows="3"
+                          value={this.state.description}
+                          onChange={this.handleInputChange}
+                        > </textarea>
+                    </div>
+                    <div className="form-gropu">
+                      <label htmlFor="chores"><u>Add Chores:</u></label>
+                      <br />
+                      <p className="sub-label">
+                        Note: <em>Hold down cntrl or command to choose multiple options</em>
+                      </p>
+                      <br />
+                      <select  name="chores" onChange={this.handleInputchange}>
+                        <option value="Choose" disabled >Choose Existing Chores: &nbsp;</option>
+                        {this.state.choreOptions.map(chore => 
+                          <option key={chore._id} value={chore.name}>{chore.name}</option>
+                        )}
+                      </select>
+                      <br />
+                      <br />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="reward">Reward:</label>
+                        <input
+                          name="reward"
+                          type="text"
+                          className="form-control"
+                          id="addReward"
+                          value={this.state.reward}
+                          onChange={this.handleInputChange}
+                        />
+                    </div>
+
+                        <button
+                          type="submit"
+                          className="btn btn-primary"
+                          onClick={this.handleSubmit}
+                        > Submit </button>
+
+                </form>
+              </div>
+            </Container>
+        );
+    }
+>>>>>>> 9404b0b52925113da838fbc70f2a01388088a5d5
 }
 
 export default createPool;

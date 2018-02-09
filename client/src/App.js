@@ -13,6 +13,7 @@ import Footer from "./components/footer";
 import './App.css';
 
 
+
 const App = () => (
   <Router>
     <div>
@@ -31,5 +32,6 @@ const App = () => (
     </div>
   </Router>
 );
+
 
 export default App;

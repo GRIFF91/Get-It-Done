@@ -33,6 +33,7 @@ class addChore extends Component {
     render() {
         return (  
             <Container fluid>
+              <div className="card text-white bg-primary mb-3">
                 <form>
                     <div className="form-group">
                         <label htmlFor="name">Add A Chore</label>
@@ -54,13 +55,15 @@ class addChore extends Component {
                           value={this.state.description}
                           onChange={this.handleInputChange}
                         > </textarea>
+                          <br />
                         <button
                           type="submit"
-                          className="btn btn-default"
+                          className="btn btn-primary"
                           onClick={this.handleSubmit}
                         > Submit </button>
-
+                
                 </form>
+              </div>
             </Container>
         );
     }

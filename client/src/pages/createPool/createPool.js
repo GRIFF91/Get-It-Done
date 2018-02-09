@@ -32,12 +32,16 @@ class createPool extends Component {
     // handle any changes to the input fields
     handleInputChange = event => {
       // Pull the name and value properties off of the event.target (the element which triggered the event)
-      const { name, value } = event.target;
+      const { name, value, chores } = event.target;
   
       // Set the state for the appropriate input field
       this.setState({
         [name]: value
       });
+      console.log(this.state)
+      console.log(name)
+      console.log('value ', value)
+      console.log(chores);
     }
 
   handleSubmit = event => {
@@ -78,7 +82,7 @@ class createPool extends Component {
                         Note: <em>Hold down cntrl or command to choose multiple options</em>
                       </p>
                       <br />
-                      <select multiple name="chores" onChange={this.handleInputchange}>
+                      <select  name="chores" onChange={this.handleInputchange}>
                         <option value="Choose" disabled >Choose Existing Chores: &nbsp;</option>
                         {this.state.choreOptions.map(chore => 
                           <option value={chore.name}>{chore.name}</option>

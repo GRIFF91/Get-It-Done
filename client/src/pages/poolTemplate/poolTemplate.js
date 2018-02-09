@@ -31,7 +31,7 @@ class poolTemplate extends Component {
                                 <p className="card-text">{this.state.pool.description}</p>
                                 {this.state.pool.chores && 
                                   this.state.pool.chores.map(chore => (
-                                    <div>
+                                    <div key={this.state.pool.chores.indexOf(chore)}>
                                       <input
                                         type="checkbox"
                                         className="form-check form-check-inline"

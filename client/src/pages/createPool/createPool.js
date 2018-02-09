@@ -53,6 +53,7 @@ class createPool extends Component {
     render() {
         return (
             <Container fluid>
+              <div className="card text-white bg-primary mb-3">
                 <form>
                     <div className="form-group">
                         <label htmlFor="name">Add A Pool:</label>
@@ -105,11 +106,12 @@ class createPool extends Component {
 
                         <button
                           type="submit"
-                          className="btn btn-default"
+                          className="btn btn-primary"
                           onClick={this.handleSubmit}
                         > Submit </button>
 
                 </form>
+              </div>
             </Container>
         );
     }

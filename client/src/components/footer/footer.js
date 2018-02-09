@@ -7,4 +7,6 @@ const Footer = () =>
     <a className="footer-content" href="#">ChorePool</a>
   </footer>
 
+  
+
 export default Footer;

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/grid";
+import './poolTemplate.css';
 
 class poolTemplate extends Component {
     render() {

@@ -105,9 +105,6 @@ class createPool extends Component {
           <div className="form-gropu">
             <label htmlFor="chores"><u>Add Chores:</u></label>
             <br />
-            <p className="sub-label">
-              Note: <em>Hold down cntrl or command to choose multiple options</em>
-            </p>
             <br />
             <Select
               name="chores"

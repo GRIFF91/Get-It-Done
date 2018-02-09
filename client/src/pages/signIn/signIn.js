@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 // import { Redirect } from "react-router-dom";
+import "./signIn.css";
 import { Col, Row, Container } from "../../components/grid";
 import API from "../../utils/API";
-import './SingIn.css';
+
 
 class signIn extends Component {
 
@@ -62,7 +63,10 @@ class signIn extends Component {
         return (
             
             <Container fluid>
+              
+              <br />
 
+              <div className="card text-white bg-primary mb-3">
                 <h2>Sign In</h2>
 
                 <form>
@@ -93,7 +97,7 @@ class signIn extends Component {
                     <div className="form-group">
                       <button
                         type="submit"
-                        className="btn btn-default"
+                        className="btn btn-primary"
                         onClick={this.handleFormSubmit}
                       > Log In →
                       </button>
@@ -114,12 +118,13 @@ class signIn extends Component {
 
                     <button
                       type="submit"
-                      className="btn btn-default"
+                      className="btn btn-primary"
                       onClick={this.handleResetSubmit}
                       > Reset →
                       </button>
 
                 </form>
+              </div>
             </Container>
         );
     }

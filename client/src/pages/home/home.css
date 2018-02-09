@@ -2,6 +2,12 @@
     font-family: 'Slackey', cursive;
     color: #033C73;
 }
+.jumboText {
+    background: rgba(255, 255, 255, 0.6);
+    margin-right: 30%;
+    padding: 15px;
+    margin-bottom: 30px;
+}
 
 .lead {
     color: #033C73;

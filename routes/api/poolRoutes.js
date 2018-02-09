@@ -8,7 +8,11 @@ router.route('/create')
 router.route('/getPools')
   .get(catchErrors(poolController.getPools));
 
-router.route('/:id')
+router.route('/deletePool/:id')
+  .delete(catchErrors(poolController.deletePool));
+
+router.route('/getPool/:id')
+  .get(catchErrors(poolController.getPool));
 
 
 module.exports = router;

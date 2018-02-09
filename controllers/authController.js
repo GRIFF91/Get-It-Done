@@ -13,7 +13,7 @@ exports.loginUser = passport.authenticate('local', {
 
 exports.logout = (req, res) => {
   req.logout();
-  res.json('You are now logged out');
+  res.json('logout');
 };
 
 exports.isLoggedIn = (req, res, next) => {

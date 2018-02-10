@@ -68,7 +68,7 @@ class poolManager extends Component {
                           <Col size="sm-2">
                             <Link
                               type="button"
-                              className="btn btn-default btn-outline btn-primary float-right"
+                              className="btn btn-outline btn-primary float-right"
                               to={`/pool/${pool._id}`}
                             > Choose
                             </Link>

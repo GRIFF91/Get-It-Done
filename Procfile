@@ -1,1 +1,1 @@
-web: yarn installDeps && yarn server
+web: yarn installDeps && yarn build && yarn server

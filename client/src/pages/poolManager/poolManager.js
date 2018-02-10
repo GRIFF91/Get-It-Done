@@ -52,7 +52,7 @@ class poolManager extends Component {
                   <h3 className="float-left">Pools</h3>
                   <Link
                     type="button"
-                    className="btn btn-default btn-outline btn-primary float-right"
+                    className="btn btn-primary btn-lg float-right"
                     to="/createPool"
                   > Create New Pool
                   </Link>
@@ -68,7 +68,7 @@ class poolManager extends Component {
                           <Col size="sm-2">
                             <Link
                               type="button"
-                              className="btn btn-outline btn-primary float-right"
+                              className="btn btn-primary btn-lg float-right"
                               to={`/pool/${pool._id}`}
                             > Choose
                             </Link>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/grid";
 import API from '../../utils/API';
+import Nav from '../../components/nav/nav';
 
 class addChore extends Component {
 
@@ -31,7 +32,9 @@ class addChore extends Component {
   }
 
     render() {
-        return (  
+        return (
+          <div>
+            <Nav history={this.props.history} />
             <Container fluid>
               <div className="card text-white bg-primary mb-3">
                 <form>
@@ -65,6 +68,7 @@ class addChore extends Component {
                 </form>
               </div>
             </Container>
+          </div>
         );
     }
 }

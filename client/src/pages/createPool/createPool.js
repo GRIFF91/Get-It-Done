@@ -5,6 +5,7 @@ import API from '../../utils/API';
 import Select from 'react-select';
 import { Creatable } from 'react-select';
 import 'react-select/dist/react-select.css';
+import Nav from '../../components/nav/nav';
 
 class createPool extends Component {
 
@@ -78,67 +79,70 @@ class createPool extends Component {
     const { chores } = this.state;
     // const value = selectedOption && selectedOption.value;
     return (
-      <Container fluid>
-        <form>
-          <div className="form-group">
-            <label htmlFor="name">Add A Pool:</label>
-            <input
-              name="name"
-              type="text"
-              className="form-control"
-              id="addAPool"
-              value={this.state.name}
-              onChange={this.handleInputChange}
-            />
-          </div>
-          <div className="form-group">
-              <label htmlFor="description">Pool Description:</label>
-              <textarea
-                name="description"
-                className="form-control"
-                rows="3"
-                value={this.state.description}
-                onChange={this.handleInputChange}
-              > </textarea>
-          </div>
-          <div className="form-gropu">
-            <label htmlFor="chores"><u>Add Chores:</u></label>
-            <br />
-            <br />
-            <Select
-              name="chores"
-              // value={this.state.chores}
-              onChange={this.handleSelectChange}
-              // multi={true}
-              options={this.state.selectOptions}
-              placeholder="Add Chores To Your Pool ..."
-              multi
-              joinValues
-              value={chores}
-            />
-            <br />
-            <br />
-          </div>
-          <div className="form-group">
-              <label htmlFor="reward">Reward:</label>
+      <div>
+        <Nav history={this.props.history} />
+        <Container fluid>
+          <form>
+            <div className="form-group">
+              <label htmlFor="name">Add A Pool:</label>
               <input
-                name="reward"
+                name="name"
                 type="text"
                 className="form-control"
-                id="addReward"
-                value={this.state.reward}
+                id="addAPool"
+                value={this.state.name}
                 onChange={this.handleInputChange}
               />
-          </div>
+            </div>
+            <div className="form-group">
+                <label htmlFor="description">Pool Description:</label>
+                <textarea
+                  name="description"
+                  className="form-control"
+                  rows="3"
+                  value={this.state.description}
+                  onChange={this.handleInputChange}
+                > </textarea>
+            </div>
+            <div className="form-gropu">
+              <label htmlFor="chores"><u>Add Chores:</u></label>
+              <br />
+              <br />
+              <Select
+                name="chores"
+                // value={this.state.chores}
+                onChange={this.handleSelectChange}
+                // multi={true}
+                options={this.state.selectOptions}
+                placeholder="Add Chores To Your Pool ..."
+                multi
+                joinValues
+                value={chores}
+              />
+              <br />
+              <br />
+            </div>
+            <div className="form-group">
+                <label htmlFor="reward">Reward:</label>
+                <input
+                  name="reward"
+                  type="text"
+                  className="form-control"
+                  id="addReward"
+                  value={this.state.reward}
+                  onChange={this.handleInputChange}
+                />
+            </div>
 
-          <button
-            type="submit"
-            className="btn btn-default"
-            onClick={this.handleSubmit}
-          > Submit </button>
+            <button
+              type="submit"
+              className="btn btn-default"
+              onClick={this.handleSubmit}
+            > Submit </button>
 
-        </form>
-      </Container>
+          </form>
+        </Container>
+      </div>
     );
   }
 

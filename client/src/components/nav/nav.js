@@ -10,13 +10,20 @@ class Nav extends Component {
   }
 
   componentWillMount() {
+    console.log('will mount');
+  }
+
+  componentDidMount() {
+    console.log('did mount');
     this.userData();
     // console.log(window.location.href)
   }
 
-  userData = async () => {
-    await API.userData()
-    .then(res => this.setState({ user: res.data }))
+  userData = () => {
+    API.userData()
+    .then(res => this.setState({ user: res.data }, () => {
+      console.log('user be: ', this.state.user)
+    }))
     .catch (err => console.log(err));
   }
 
@@ -34,6 +41,7 @@ class Nav extends Component {
   }
 
   render() {
+    console.log('render');
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <Link className="navbar-brand" to="/">ChorePool</Link>

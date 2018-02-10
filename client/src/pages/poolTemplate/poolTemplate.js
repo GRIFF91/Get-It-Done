@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/grid";
 import API from '../../utils/API';
 import "./poolTemplate.css";
+import Nav from '../../components/nav/nav';
 
 class poolTemplate extends Component {
 
@@ -19,7 +20,8 @@ class poolTemplate extends Component {
     render() {
       console.log(this.state);
         return (
-            <div>
+          <div>
+            <Nav />
             <Container fluid>
             <br />
                 <Row>
@@ -63,7 +65,7 @@ class poolTemplate extends Component {
                         </Col>
                     </Row>
             </Container>
-            </div>
+          </div>
         );
     }
 }

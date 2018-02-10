@@ -4,6 +4,7 @@ import { Col, Row, Container } from "../../components/grid";
 import poolTemplate from '../poolTemplate/poolTemplate';
 import API from '../../utils/API';
 import "./poolManager.css";
+import Nav from '../../components/nav/nav';
 
 
 class poolManager extends Component {
@@ -43,58 +44,59 @@ class poolManager extends Component {
   render() {
     return (  
       <div>  
-        <Container fluid>
-          <br />
-          <Row>
-            <Col size="md-12">
-              <div className="card text-white bg-primary mb-3">
-                <div className="card-header">
-                  <h3 className="float-left">Pools</h3>
-                  <Link
-                    role="button"
-                    type="button"
-                    className="btn btn-primary btn-lg float-right"
-                    to="/createPool"
-                  > Create New Pool
-                  </Link>
+        <Nav history={this.props.history}/>
+          <Container fluid>
+            <br />
+            <Row>
+              <Col size="md-12">
+                <div className="card text-white bg-primary mb-3">
+                  <div className="card-header">
+                    <h3 className="float-left">Pools</h3>
+                    <Link
+                      role="button"
+                      type="button"
+                      className="btn btn-primary btn-lg float-right"
+                      to="/createPool"
+                    > Create New Pool
+                    </Link>
+                  </div>
+                  <div className="card-body">
+                    {this.state.pools.map(pool => (
+                      <div key={pool._id}>
+                        <Container>
+                          <Row>
+                            <Col size="sm-6">
+                              <h4 className="card-title float-left">{pool.name}</h4>
+                            </Col>
+                            <Col size="sm-2">
+                              <Link
+                                role="button"
+                                type="button"
+                                className="btn btn-primary btn-lg float-right"
+                                to={`/pool/${pool._id}`}
+                              > Choose
+                              </Link>
+                            </Col>
+                            <Col size="sm-2">
+                              <button
+                                type="button"
+                                className="btn btn-danger"
+                                id={pool._id}
+                                onClick={this.deletePool} > X
+                              {/* <i className="far fa-times-circle text-danger fa-2x"></i> */}
+                              </button>
+                              <br />
+                              <br />
+                            </Col>
+                          </Row>
+                        </Container>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <div className="card-body">
-                  {this.state.pools.map(pool => (
-                    <div key={pool._id}>
-                      <Container>
-                        <Row>
-                          <Col size="sm-6">
-                            <h4 className="card-title float-left">{pool.name}</h4>
-                          </Col>
-                          <Col size="sm-2">
-                            <Link
-                              role="button"
-                              type="button"
-                              className="btn btn-primary btn-lg float-right"
-                              to={`/pool/${pool._id}`}
-                            > Choose
-                            </Link>
-                          </Col>
-                          <Col size="sm-2">
-                            <button
-                              type="button"
-                              className="btn btn-danger"
-                              id={pool._id}
-                              onClick={this.deletePool} > X
-                            {/* <i className="far fa-times-circle text-danger fa-2x"></i> */}
-                            </button>
-                            <br />
-                            <br />
-                          </Col>
-                        </Row>
-                      </Container>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </Container>
+              </Col>
+            </Row>
+          </Container>
       </div>
     );
   }

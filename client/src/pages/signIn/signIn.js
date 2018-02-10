@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./signIn.css";
 import { Col, Row, Container } from "../../components/grid";
 import API from "../../utils/API";
+import Nav from '../../components/nav/nav';
 
 
 class signIn extends Component {
@@ -21,7 +22,7 @@ class signIn extends Component {
       const url = res.request.responseURL;
       if (url.endsWith('/success')) {
         console.log('You are now logged in! 🤠');
-        this.forceUpdate();
+        // this.forceUpdate();
         this.props.history.push('/poolManager')
       } else {
         console.log('Either Email or Password is incorrect');
@@ -55,7 +56,8 @@ class signIn extends Component {
 
     render() {
         return (
-            
+          <div>
+            <Nav history={this.props.history}/>
             <Container fluid>
               
               <br />
@@ -120,6 +122,7 @@ class signIn extends Component {
                 </form>
               </div>
             </Container>
+          </div>
         );
     }
 }

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/grid";
 import API from '../../utils/API';
 import "./register.css";
+import Nav from '../../components/nav/nav';
 
 class register extends Component {
 
@@ -16,19 +17,6 @@ class register extends Component {
   registerPoolManager = (name, email, password, passwordConfirm) => {
     API.registerPoolManager(name, email, password, passwordConfirm)
     .then(res => this.login(res.data.email, this.state.password))
-    // .then(() => {
-    //   API.login(this.state.email, this.state.password)
-    //   .then(res => {
-    //     const url = res.request.responseURL;
-    //     if (url.endsWith('/success')) {
-    //       console.log('You are now logged in! 🤠');
-    //       this.props.history.push('/poolManager')
-    //     } else {
-    //       console.log('Either Email or Password is incorrect');
-    //     }
-    //   })
-    //   .catch(err => console.log(err));
-    // })
     .then(() => console.log('Registration sent'))
     // .then(() => this.props.history.push('/poolManager'))
     .catch(err => console.log(err));
@@ -64,17 +52,12 @@ class register extends Component {
   handleFormSubmit = event => { 
     event.preventDefault();
     this.registerPoolManager(this.state.name, this.state.email, this.state.password, this.state.passwordConfirm);
-    // this.login(this.state.email, this.state.password);
-    // this.setState({
-    //   name: '',
-    //   email: '',
-    //   password: '',
-    //   passwordConfirm: ''
-    // });
   }
 
     render() {
         return (  
+          <div>
+            <Nav history={this.props.history} />
             <Container fluid>
             <br />
             <div className="card text-white bg-primary mb-3">
@@ -128,6 +111,7 @@ class register extends Component {
                 </form>
                 </div>
             </Container>
+          </div>
         );
     }
 }

@@ -17,7 +17,7 @@ import './App.css';
 const App = () => (
   <Router>
     <div>
-      <Nav />
+      {/* <Nav /> */}
         <Switch>
           {<Route exact path='/' component={home} />}
           {<Route exact path='/register' component={register} />}

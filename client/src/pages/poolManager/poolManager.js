@@ -51,6 +51,7 @@ class poolManager extends Component {
                 <div className="card-header">
                   <h3 className="float-left">Pools</h3>
                   <Link
+                    role="button"
                     type="button"
                     className="btn btn-primary btn-lg float-right"
                     to="/createPool"
@@ -67,6 +68,7 @@ class poolManager extends Component {
                           </Col>
                           <Col size="sm-2">
                             <Link
+                              role="button"
                               type="button"
                               className="btn btn-primary btn-lg float-right"
                               to={`/pool/${pool._id}`}

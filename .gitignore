@@ -1,7 +1,7 @@
 # Client Build File to be uploaded upon deployment
 #/client/build
 
-variable.env
+variables.env
 
 # Logs
 logs

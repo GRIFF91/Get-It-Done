@@ -1,9 +1,9 @@
 .sticky-footer {
     /* background: rgb(230, 230, 230); */
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: 0;
-    height: 50px;
+    height: 5%;
     width: 100%;
 }
 .footer-content {

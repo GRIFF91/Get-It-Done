@@ -108,7 +108,7 @@ class createPool extends Component {
               <label htmlFor="chores"><u>Add Chores:</u></label>
               <br />
               <br />
-              <Select
+              <Select.Creatable
                 name="chores"
                 // value={this.state.chores}
                 onChange={this.handleSelectChange}
